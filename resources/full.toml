@@ -1,0 +1,13 @@
+# Base config
+[base]
+name = "Full Config"
+version = "1.0.0"
+host = "myhost.com"
+port = 9999
+
+# Plugin config
+[plugin]
+plugin_name = "MyPlugin"
+plugin_version = "2.2.2"
+param1 = "I am required"
+param2 = "I am optional"

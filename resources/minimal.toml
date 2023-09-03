@@ -1,0 +1,10 @@
+# Base config
+[base]
+name = "Minimal Config"
+version = "1.0.0"
+
+# Plugin config
+[plugin]
+plugin_name = "MyPlugin"
+plugin_version = "1.1.1"
+param1 = "I am required"
