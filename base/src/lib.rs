@@ -12,8 +12,18 @@ pub trait Config: Default + Debug + Serialize + for<'de> Deserialize<'de> {
         toml::to_string(self)
     }
 
+    fn to_string(&self) -> String {
+        match self.to_toml() {
+            Ok(str) => str,
+            Err(err) => {
+                println!("Failed to convert config to String with error: {}", err);
+                "".to_string()
+            }
+        }
+    }
+
     fn to_file(&self, file_name: &str) -> Result<(), Box<dyn Error>> {
-        let toml_str = self.to_toml()?;
+        let toml_str = self.to_string();
         let path = Path::new(file_name);
         
         let mut file = File::create(&path)?;
